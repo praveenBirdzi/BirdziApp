@@ -17,7 +17,10 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
-  end
+  lane :beta do
+  # ...
+  build_app
+  enable_automatic_code_signing(path: "Birdzi.xcworkspace")
+  hockey(api_token: "631524d2b0be4ced8eec1e6c99cd2941")
+end
 end
